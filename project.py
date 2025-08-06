@@ -4,7 +4,7 @@ employee_data = {101 : { 'name' : "Avinash",
                          'department' : "HR",
                          'salary' : 1300000
                         }}
-def adding_data():
+def add_employee():
     emp_id = int(input("Enter a Employee_id : "))
     if emp_id in employee_data:
         print(f"{emp_id} is Already Exists. Enter Another id : ")
@@ -22,14 +22,14 @@ def adding_data():
             }
         print(f"{emp_id} is Added Successfully ")
 
-def view_data():
+def view_employees():
     for emp_id, details in employee_data.items():
         print(f"{emp_id} : name - {details['name']}, age - {details['age']}, department - {details['department']}, salary - {details['salary']}")
     
     if not employee_data:
         print("No Employee Details Found")
 
-def search_data():
+def search_employee():
     emp_id = int(input("Enter the Employee ID to search: "))
     if emp_id in employee_data:
         data = employee_data[emp_id]
@@ -50,13 +50,13 @@ def main_menu():
         input_data = int(input("Enter Value : "))
     
         if input_data == 1:
-            adding_data()
+            add_employee()
 
         elif input_data == 2:
-            view_data()
+            view_employees()
 
         elif input_data == 3:
-            search_data()
+            search_employee()
 
         elif input_data == 4:
             sys.exit("Thanks for visiting. Good Bye")
